@@ -1,0 +1,239 @@
+@prefix : <http://www.oursite.it/ontology/> .
+@prefix oso: <http://www.oursite.it/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.oursite.it/ontology/> .
+
+<http://www.oursite.it/ontology/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.oursite.it/ontology/hasNearAccomodationFacility
+oso:hasNearAccomodationFacility rdf:type owl:ObjectProperty ;
+                                owl:inverseOf oso:relativeArchaeologicalSite ;
+                                rdfs:domain oso:ArchaeologicalSite ;
+                                rdfs:range oso:DistanceBetween .
+
+
+###  http://www.oursite.it/ontology/hasNearArchaeologicalSite
+oso:hasNearArchaeologicalSite rdf:type owl:ObjectProperty ;
+                              owl:inverseOf oso:relativeAccomodationFacility ;
+                              rdfs:domain oso:AccomodationFacility ;
+                              rdfs:range oso:DistanceBetween .
+
+
+###  http://www.oursite.it/ontology/hasProvince
+oso:hasProvince rdf:type owl:ObjectProperty ;
+                rdfs:domain oso:AccomodationFacility ;
+                rdfs:range oso:Province .
+
+
+###  http://www.oursite.it/ontology/relatedCity
+oso:relatedCity rdf:type owl:ObjectProperty ;
+                rdfs:domain oso:AccomodationFacility ,
+                            oso:ArchaeologicalSite ;
+                rdfs:range oso:City .
+
+
+###  http://www.oursite.it/ontology/relativeAccomodationFacility
+oso:relativeAccomodationFacility rdf:type owl:ObjectProperty ;
+                                 rdfs:domain oso:DistanceBetween ;
+                                 rdfs:range oso:AccomodationFacility .
+
+
+###  http://www.oursite.it/ontology/relativeArchaeologicalSite
+oso:relativeArchaeologicalSite rdf:type owl:ObjectProperty ;
+                               rdfs:domain oso:DistanceBetween ;
+                               rdfs:range oso:ArchaeologicalSite .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.oursite.it/ontology/address
+oso:address rdf:type owl:DatatypeProperty ;
+            rdfs:domain oso:AccomodationFacility ,
+                        oso:ArchaeologicalSite ;
+            rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/archaeologicalSheet
+oso:archaeologicalSheet rdf:type owl:DatatypeProperty ;
+                        rdfs:domain oso:ArchaeologicalSite ;
+                        rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/category
+oso:category rdf:type owl:DatatypeProperty ;
+             rdfs:domain oso:AccomodationFacility ;
+             rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/chronology
+oso:chronology rdf:type owl:DatatypeProperty ;
+               rdfs:domain oso:ArchaeologicalSite ;
+               rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/code
+oso:code rdf:type owl:DatatypeProperty ;
+         rdfs:domain oso:AccomodationFacility ;
+         rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/distance
+oso:distance rdf:type owl:DatatypeProperty ;
+             rdfs:domain oso:DistanceBetween ;
+             rdfs:range xsd:float .
+
+
+###  http://www.oursite.it/ontology/email
+oso:email rdf:type owl:DatatypeProperty ;
+          rdfs:domain oso:AccomodationFacility ,
+                      oso:ArchaeologicalSite ;
+          rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/facilityType
+oso:facilityType rdf:type owl:DatatypeProperty ;
+                 rdfs:domain oso:AccomodationFacility ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/fullTicket
+oso:fullTicket rdf:type owl:DatatypeProperty ;
+               rdfs:domain oso:ArchaeologicalSite ;
+               rdfs:range xsd:float .
+
+
+###  http://www.oursite.it/ontology/image
+oso:image rdf:type owl:DatatypeProperty ;
+          rdfs:domain oso:ArchaeologicalSite ;
+          rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/info
+oso:info rdf:type owl:DatatypeProperty ;
+         rdfs:domain oso:ArchaeologicalSite ;
+         rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/latitude
+oso:latitude rdf:type owl:DatatypeProperty ;
+             rdfs:domain oso:AccomodationFacility ,
+                         oso:ArchaeologicalSite ;
+             rdfs:range xsd:float .
+
+
+###  http://www.oursite.it/ontology/longitude
+oso:longitude rdf:type owl:DatatypeProperty ;
+              rdfs:domain oso:AccomodationFacility ,
+                          oso:ArchaeologicalSite ;
+              rdfs:range xsd:float .
+
+
+###  http://www.oursite.it/ontology/notes
+oso:notes rdf:type owl:DatatypeProperty ;
+          rdfs:domain oso:ArchaeologicalSite ;
+          rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/openingHours
+oso:openingHours rdf:type owl:DatatypeProperty ;
+                 rdfs:domain oso:ArchaeologicalSite ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/parkName
+oso:parkName rdf:type owl:DatatypeProperty ;
+             rdfs:domain oso:ArchaeologicalSite ;
+             rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/reducedTicket
+oso:reducedTicket rdf:type owl:DatatypeProperty ;
+                  rdfs:domain oso:ArchaeologicalSite ;
+                  rdfs:range xsd:float .
+
+
+###  http://www.oursite.it/ontology/siteType
+oso:siteType rdf:type owl:DatatypeProperty ;
+             rdfs:domain oso:ArchaeologicalSite ;
+             rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/social
+oso:social rdf:type owl:DatatypeProperty ;
+           rdfs:domain oso:ArchaeologicalSite ;
+           rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/telephoneNumber
+oso:telephoneNumber rdf:type owl:DatatypeProperty ;
+                    rdfs:domain oso:AccomodationFacility ,
+                                oso:ArchaeologicalSite ;
+                    rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/webReference
+oso:webReference rdf:type owl:DatatypeProperty ;
+                 rdfs:domain oso:ArchaeologicalSite ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.oursite.it/ontology/website
+oso:website rdf:type owl:DatatypeProperty ;
+            rdfs:domain oso:AccomodationFacility ;
+            rdfs:range xsd:string .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:DatatypeProperty ;
+           rdfs:domain oso:AccomodationFacility ,
+                       oso:ArchaeologicalSite ,
+                       oso:City ,
+                       oso:Province ;
+           rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.oursite.it/ontology/AccomodationFacility
+oso:AccomodationFacility rdf:type owl:Class ;
+                         owl:disjointWith oso:ArchaeologicalSite ,
+                                          oso:City ,
+                                          oso:DistanceBetween ,
+                                          oso:Province .
+
+
+###  http://www.oursite.it/ontology/ArchaeologicalSite
+oso:ArchaeologicalSite rdf:type owl:Class ;
+                       owl:disjointWith oso:City ,
+                                        oso:DistanceBetween ,
+                                        oso:Province .
+
+
+###  http://www.oursite.it/ontology/City
+oso:City rdf:type owl:Class ;
+         owl:disjointWith oso:DistanceBetween ,
+                          oso:Province .
+
+
+###  http://www.oursite.it/ontology/DistanceBetween
+oso:DistanceBetween rdf:type owl:Class ;
+                    owl:disjointWith oso:Province .
+
+
+###  http://www.oursite.it/ontology/Province
+oso:Province rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
